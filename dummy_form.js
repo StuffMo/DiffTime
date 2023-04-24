@@ -55,17 +55,31 @@ function init_time(field) {
  */
 function debut_1_onenter() {
 	init_time(debut_1);
-	set_diff_time(debut_1, fin_1, temps_garrot);
+	set_diff_time(debut_1, fin_1, temps_garrot_1);
 }
 function fin_1_onenter() {
 	init_time(fin_1);
-	set_diff_time(debut_1, fin_1, temps_garrot);
+	set_diff_time(debut_1, fin_1, temps_garrot_1);
 }
 function debut_1_onleave() {
-	set_diff_time(debut_1, fin_1, temps_garrot);
+	set_diff_time(debut_1, fin_1, temps_garrot_1);
 }
 function fin_1_onleave() {
-	set_diff_time(debut_1, fin_1, temps_garrot);
+	set_diff_time(debut_1, fin_1, temps_garrot_1);
+}
+function debut_2_onenter() {
+	init_time(debut_2);
+	set_diff_time(debut_2, fin_2, temps_garrot_2);
+}
+function fin_2_onenter() {
+	init_time(fin_2);
+	set_diff_time(debut_2, fin_2, temps_garrot_2);
+}
+function debut_2_onleave() {
+	set_diff_time(debut_2, fin_2, temps_garrot_2);
+}
+function fin_2_onleave() {
+	set_diff_time(debut_2, fin_2, temps_garrot_2);
 }
 /**
  * Point d'entrée
@@ -73,9 +87,12 @@ function fin_1_onleave() {
 function init() {
 	debut_1 = document.getElementById("debut_1");
 	fin_1 = document.getElementById("fin_1");
-	temps_garrot = document.getElementById("temps_garrot");
-	debut_1.addEventListener("click", debut_1_onenter);
-	fin_1.addEventListener("click", fin_1_onenter);
-	debut_1.addEventListener("focusout", debut_1_onleave);
-	fin_1.addEventListener("focusout", fin_1_onleave);
+	temps_garrot_1 = document.getElementById("temps_garrot_1");
+	debut_2 = document.getElementById("debut_2");
+	fin_2 = document.getElementById("fin_2");
+	temps_garrot_2 = document.getElementById("temps_garrot_2");
+	debut_2.addEventListener("click", debut_2_onenter);
+	fin_2.addEventListener("click", fin_2_onenter);
+	debut_2.addEventListener("focusout", debut_2_onleave);
+	fin_2.addEventListener("focusout", fin_2_onleave);
 }
