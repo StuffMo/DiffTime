@@ -2,6 +2,7 @@
  * Calcul de la différence entre deux heures
  * indiquées dans les champs obj_debut et obj_fin
  * Le résultat est placé dans le champ obj_diff
+ * Preview: https://htmlpreview.github.io/?https://github.com/StuffMo/DiffTime/blob/master/dummy_form.htm
  */
 function set_diff_time(obj_debut, obj_fin, obj_diff) {
 	// variables d'entrée
