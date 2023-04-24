@@ -91,6 +91,12 @@ function init() {
 	debut_2 = document.getElementById("debut_2");
 	fin_2 = document.getElementById("fin_2");
 	temps_garrot_2 = document.getElementById("temps_garrot_2");
+
+	debut_1.addEventListener("click", debut_1_onenter);
+	fin_1.addEventListener("click", fin_1_onenter);
+	debut_1.addEventListener("focusout", debut_1_onleave);
+	fin_1.addEventListener("focusout", fin_1_onleave);
+	
 	debut_2.addEventListener("click", debut_2_onenter);
 	fin_2.addEventListener("click", fin_2_onenter);
 	debut_2.addEventListener("focusout", debut_2_onleave);
