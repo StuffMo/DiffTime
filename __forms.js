@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		inputs[i].addEventListener("input", inputs[i].OnChange);
 		inputs[i].addEventListener("focus", inputs[i].OnEnter);
 		inputs[i].addEventListener("focusout", inputs[i].OnLeave);
+		inputs[i].addEventListener("keydown", inputs[i].OnKey);
 	}
 	Form.OnInit();
 });
