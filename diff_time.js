@@ -25,15 +25,29 @@ Form.OnInit = function() {
 				field_target.Value = date_format.format(new Date().setHours(0, diff_minutes));
 		}
 	}
+	Form.IncDecMinutes = function(event) {
+		let pattern = '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$';
+		if(event.target.Value.match(pattern)) {
+			let dt = event.key == "ArrowUp" ? 1 : event.key == "ArrowDown" ? -1 : 0;
+			let [h, m] = event.target.Value.split(":").map((i) => { return parseInt(i); });
+			event.target.Value = date_format.format(new Date().setHours(0, (h * 60 + m + dt)));
+		}
+	}
 }
 debut_1.OnEnter = function() {
 	Form.InitTime(debut_1);
+}
+debut_1.OnKey = function(event) {
+	Form.IncDecMinutes(event);
 }
 debut_1.OnChange = function() {
 	Form.DiffTime(debut_1, fin_1, diff_1);
 }
 fin_1.OnEnter = function() {
 	Form.InitTime(fin_1);
+}
+fin_1.OnKey = function(event) {
+	Form.IncDecMinutes(event);
 }
 fin_1.OnChange = function() {
 	Form.DiffTime(debut_1, fin_1, diff_1);
